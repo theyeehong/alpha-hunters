@@ -1,0 +1,322 @@
+Alpha Hunters/
+│
+├── README.md
+├── LICENSE
+├── pyproject.toml
+├── .gitignore
+├── .env.example
+├── Makefile
+│
+├── config/
+│   ├── default.yaml
+│   ├── data.yaml
+│   ├── alpha_hunting.yaml
+│   ├── backtesting.yaml
+│   ├── portfolio.yaml
+│   ├── risk.yaml
+│   └── logging.yaml
+│
+├── docs/
+│   ├── architecture/
+│   │   ├── system_overview.md
+│   │   ├── module_interfaces.md
+│   │   └── data_flow.md
+│   ├── methodology/
+│   │   ├── research_principles.md
+│   │   ├── statistical_validation.md
+│   │   ├── backtesting_rules.md
+│   │   └── risk_methodology.md
+│   ├── tutorials/
+│   └── decisions/
+│       └── architecture_decisions/
+│
+├── data_engine/
+│   ├── sources/
+│   │   ├── equities/
+│   │   ├── indices/
+│   │   ├── etfs/
+│   │   ├── fundamentals/
+│   │   └── macroeconomic/
+│   ├── ingestion/
+│   │   ├── downloaders.py
+│   │   ├── api_clients.py
+│   │   └── ingestion_pipeline.py
+│   ├── storage/
+│   │   ├── raw_store.py
+│   │   ├── processed_store.py
+│   │   └── metadata_store.py
+│   ├── cleaning/
+│   │   ├── missing_values.py
+│   │   ├── corporate_actions.py
+│   │   └── data_validation.py
+│   ├── universe/
+│   │   ├── stock_universe.py
+│   │   ├── universe_filters.py
+│   │   └── point_in_time_universe.py
+│   ├── features/
+│   │   ├── returns.py
+│   │   ├── volatility.py
+│   │   ├── volume.py
+│   │   └── technical_features.py
+│   └── pipelines/
+│       ├── historical_pipeline.py
+│       └── update_pipeline.py
+│
+├── alpha_hunting/
+│   ├── README.md
+│   ├── research_registry.py
+│   ├── signal_registry.py
+│   ├── hypothesis.py
+│   ├── signal_interface.py
+│   │
+│   ├── momentum/
+│   │   ├── time_series_momentum.py
+│   │   ├── cross_sectional_momentum.py
+│   │   ├── trend_following.py
+│   │   └── momentum_features.py
+│   ├── mean_reversion/
+│   │   ├── short_term_reversal.py
+│   │   ├── zscore_reversion.py
+│   │   ├── pairs_trading_signals.py
+│   │   └── spread_signals.py
+│   ├── value/
+│   │   ├── valuation_signals.py
+│   │   ├── fundamental_ratios.py
+│   │   └── relative_value.py
+│   ├── quality/
+│   │   ├── profitability.py
+│   │   ├── balance_sheet_quality.py
+│   │   └── earnings_quality.py
+│   ├── carry/
+│   │   ├── carry_signals.py
+│   │   └── term_structure.py
+│   ├── seasonality/
+│   │   ├── calendar_effects.py
+│   │   └── seasonal_patterns.py
+│   ├── volatility/
+│   │   ├── volatility_signals.py
+│   │   ├── volatility_regimes.py
+│   │   └── volatility_risk_premia.py
+│   ├── statistical_arbitrage/
+│   │   ├── cointegration.py
+│   │   ├── residual_signals.py
+│   │   └── basket_arbitrage.py
+│   ├── machine_learning/
+│   │   ├── feature_selection.py
+│   │   ├── linear_models.py
+│   │   ├── tree_models.py
+│   │   ├── time_series_models.py
+│   │   ├── deep_learning.py
+│   │   └── ensemble_models.py
+│   ├── factor_research/
+│   │   ├── factor_definitions.py
+│   │   ├── factor_returns.py
+│   │   ├── factor_exposures.py
+│   │   └── factor_attribution.py
+│   ├── discovery/
+│   │   ├── exploratory_analysis.py
+│   │   ├── hypothesis_generation.py
+│   │   ├── interaction_search.py
+│   │   └── experiment_proposals.py
+│   ├── signal_processing/
+│   │   ├── normalization.py
+│   │   ├── ranking.py
+│   │   ├── neutralization.py
+│   │   └── signal_combination.py
+│   └── output/
+│       ├── signal_store.py
+│       ├── hypothesis_reports.py
+│       └── research_summaries.py
+│
+├── validation/
+│   ├── predictive_power/
+│   │   ├── information_coefficient.py
+│   │   ├── rank_information_coefficient.py
+│   │   └── quantile_analysis.py
+│   ├── statistical_tests/
+│   │   ├── significance_tests.py
+│   │   ├── bootstrap.py
+│   │   ├── permutation_tests.py
+│   │   └── multiple_testing.py
+│   ├── robustness/
+│   │   ├── parameter_sensitivity.py
+│   │   ├── regime_analysis.py
+│   │   ├── subperiod_analysis.py
+│   │   └── decay_analysis.py
+│   ├── overfitting/
+│   │   ├── data_snooping.py
+│   │   ├── selection_bias.py
+│   │   └── backtest_overfitting.py
+│   └── reports/
+│       └── validation_report.py
+│
+├── strategy_engine/
+│   ├── strategy_interface.py
+│   ├── signal_to_position.py
+│   ├── entry_rules.py
+│   ├── exit_rules.py
+│   ├── position_rules.py
+│   ├── constraints.py
+│   └── strategy_registry.py
+│
+├── backtesting/
+│   ├── engine/
+│   │   ├── event_loop.py
+│   │   ├── simulation_engine.py
+│   │   └── portfolio_state.py
+│   ├── execution/
+│   │   ├── order_simulator.py
+│   │   ├── slippage.py
+│   │   ├── transaction_costs.py
+│   │   ├── market_impact.py
+│   │   └── fill_models.py
+│   ├── accounting/
+│   │   ├── positions.py
+│   │   ├── cash_ledger.py
+│   │   └── corporate_actions.py
+│   ├── validation/
+│   │   ├── walk_forward.py
+│   │   ├── rolling_backtest.py
+│   │   ├── train_validation_test.py
+│   │   └── benchmark_comparison.py
+│   ├── metrics/
+│   │   ├── returns.py
+│   │   ├── sharpe.py
+│   │   ├── sortino.py
+│   │   ├── drawdown.py
+│   │   └── alpha_beta.py
+│   └── reports/
+│       ├── performance_report.py
+│       └── trade_analysis.py
+│
+├── portfolio/
+│   ├── construction/
+│   │   ├── equal_weight.py
+│   │   ├── mean_variance.py
+│   │   ├── minimum_variance.py
+│   │   ├── maximum_sharpe.py
+│   │   ├── risk_parity.py
+│   │   └── robust_optimization.py
+│   ├── allocation/
+│   │   ├── capital_allocation.py
+│   │   ├── signal_weighting.py
+│   │   └── risk_budgeting.py
+│   ├── sizing/
+│   │   ├── fixed_fractional.py
+│   │   ├── kelly_criterion.py
+│   │   ├── fractional_kelly.py
+│   │   └── volatility_targeting.py
+│   ├── constraints/
+│   │   ├── position_limits.py
+│   │   ├── sector_limits.py
+│   │   ├── leverage_limits.py
+│   │   └── turnover_limits.py
+│   └── rebalancing/
+│       ├── schedules.py
+│       └── rebalance_engine.py
+│
+├── risk_engine/
+│   ├── metrics/
+│   │   ├── volatility.py
+│   │   ├── value_at_risk.py
+│   │   ├── expected_shortfall.py
+│   │   ├── drawdown.py
+│   │   └── exposure_analysis.py
+│   ├── dependence/
+│   │   ├── correlation.py
+│   │   ├── covariance.py
+│   │   └── tail_dependence.py
+│   ├── stress_testing/
+│   │   ├── historical_scenarios.py
+│   │   ├── monte_carlo.py
+│   │   └── scenario_analysis.py
+│   ├── monitoring/
+│   │   ├── concentration.py
+│   │   ├── leverage.py
+│   │   └── risk_limits.py
+│   └── reports/
+│       └── risk_report.py
+│
+├── simulation/
+│   ├── price_processes/
+│   │   ├── geometric_brownian_motion.py
+│   │   ├── jump_diffusion.py
+│   │   └── stochastic_volatility.py
+│   ├── monte_carlo/
+│   │   ├── path_generator.py
+│   │   ├── portfolio_simulator.py
+│   │   └── ruin_probability.py
+│   └── synthetic_data/
+│       ├── market_generator.py
+│       └── signal_generator.py
+│
+├── evaluation/
+│   ├── benchmarks/
+│   ├── attribution/
+│   ├── regime_detection/
+│   ├── capacity_analysis/
+│   └── final_scorecards/
+│
+├── experiment_tracking/
+│   ├── experiment_manager.py
+│   ├── run_metadata.py
+│   ├── parameter_tracking.py
+│   ├── artifact_store.py
+│   └── research_ledger.py
+│
+├── dashboard/
+│   ├── pages/
+│   │   ├── overview.py
+│   │   ├── alpha_hunting.py
+│   │   ├── backtests.py
+│   │   ├── portfolios.py
+│   │   └── risk.py
+│   ├── components/
+│   └── app.py
+│
+├── workflows/
+│   ├── run_alpha_hunting.py
+│   ├── validate_signal.py
+│   ├── run_backtest.py
+│   ├── construct_portfolio.py
+│   └── full_research_pipeline.py
+│
+├── shared/
+│   ├── types.py
+│   ├── schemas.py
+│   ├── enums.py
+│   ├── exceptions.py
+│   ├── logging.py
+│   ├── dates.py
+│   └── reproducibility.py
+│
+├── tests/
+│   ├── unit/
+│   │   ├── test_data_engine.py
+│   │   ├── test_alpha_hunting.py
+│   │   ├── test_validation.py
+│   │   ├── test_backtesting.py
+│   │   ├── test_portfolio.py
+│   │   └── test_risk_engine.py
+│   ├── integration/
+│   │   ├── test_signal_to_backtest.py
+│   │   └── test_full_pipeline.py
+│   └── fixtures/
+│
+├── experiments/
+│   ├── notebooks/
+│   ├── hypotheses/
+│   └── archived/
+│
+├── scripts/
+│   ├── download_data.py
+│   ├── validate_data.py
+│   ├── run_research.py
+│   └── generate_report.py
+│
+├── outputs/
+│   ├── reports/
+│   ├── figures/
+│   └── exports/
+│
+└── logs/

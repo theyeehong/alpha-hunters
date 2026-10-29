@@ -1,0 +1,23 @@
+[project]
+name = "alpha-hunters"
+version = "0.1.0"
+description = "homemade research platform"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "scipy",
+    "pyarrow",
+    "pyaml",
+    "pytest",
+    "ruff",
+    "yfinance"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88

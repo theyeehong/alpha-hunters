@@ -1,0 +1,15 @@
+# Local python environments
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local secrets
+.env
+
+# Generated results
+outputs/
+logs/
